@@ -15,15 +15,16 @@ const ProductCard = ({ product }) => {
                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                     {product?.title}
                 </h5>
+                <h6 className="text-[16px] font-semibold pt-2 tracking-tight text-gray-900 dark:text-white">
+                    {product?.category}
+                </h6>
             </Link>
-            <div className="mb-5 mt-2.5 flex items-center">
                 <Rating
                     initialRating={product?.rating?.rate}
                     emptySymbol={<AiOutlineStar className="icon" />}
                     fullSymbol={<FaStar className="icon text-orange-500" />}
                     readonly
                 />
-            </div>
             <div className="flex items-center justify-between">
                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${product?.price}</span>
                 <Link
