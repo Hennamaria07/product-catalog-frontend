@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearFilters, setFilters } from '../redux/productsSlice';
+import { Button } from 'flowbite-react';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -85,13 +86,13 @@ const Filter = () => {
         <div>{rating} stars & up</div>
       </div>
 
-      <div className="mt-4">
-        <button className="bg-blue-500 text-white py-2 px-4 rounded" onClick={handleApplyFilters}>
+      <div className="flex flex-wrap gap-5 my-5">
+        <Button color="blue" onClick={handleApplyFilters}>
           Apply Filters
-        </button>
-        <button className="bg-gray-500 text-white py-2 px-4 rounded ml-2" onClick={handleClearFilters}>
+        </Button>
+        <Button color='gray' onClick={handleClearFilters}>
           Clear Filters
-        </button>
+        </Button>
       </div>
     </div>
   );
